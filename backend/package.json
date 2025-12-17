@@ -7,8 +7,8 @@
     "start": "nodemon index.js",
     "db:migrate": "npx sequelize db:migrate",
     "db:migrate:undo:all": "npx sequelize db:migrate:undo:all",
-    "db:migration:file": "npx sequelize-cli migration:generate --name <name>",
-    "db:seeder:file": "npx sequelize-cli seed:generate --name <name>",
+    "db:migration:file": "npx sequelize-cli migration:generate --name ",
+    "db:seeder:file": "npx sequelize-cli seed:generate --name ",
     "db:seed:all": "npx sequelize db:seed:all",
     "db:seed:undo:all": "npx sequelize db:seed:undo:all"
   },

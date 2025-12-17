@@ -13,7 +13,7 @@ exports.createUser = async (fullName, email, password) => {
 // Login user
 exports.loginUserById = async (email) => {
     const query = mysql.format(
-        'SELECT * FROM Users WHERE email = ?',
+        'SELECT fullName, email, password, createdAt, updatedAt FROM Users WHERE email = ?',
         [email]
     );
     const [rows] = await pool.execute(query);
@@ -23,7 +23,7 @@ exports.loginUserById = async (email) => {
 // Update user details
 exports.getUserById = async (id) => {
     const query = mysql.format(
-        'SELECT * FROM Users WHERE id = ?',
+        'SELECT fullName, email, password, createdAt, updatedAt FROM Users WHERE id = ?',
         [id]
     );
     const [rows] = await pool.execute(query);
@@ -54,7 +54,7 @@ exports.deleteUserById = async (id) => {
 //fetch user details
 exports.fetchUserById = async (id) => {
     const query = mysql.format(
-        'SELECT * FROM Users WHERE id = ?',
+        'SELECT fullName, email, password, createdAt, updatedAt FROM Users WHERE id = ?',
         [id]
     );
     const [rows] = await pool.execute(query);

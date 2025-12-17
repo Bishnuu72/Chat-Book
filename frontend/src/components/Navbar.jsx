@@ -103,9 +103,9 @@ const Navbar = () => {
               <li><Link to="/home">Home</Link></li>
               <li><Link to="/friend">Friends</Link></li>
               <li><Link to="/message">Messages</Link></li>
-              <li><Link to="#">Notifications</Link></li>
+              {/* <li><Link to="#">Notifications</Link></li>
               <li><Link to="#">Explore</Link></li>
-              <li><Link to="#">Market Place</Link></li>
+              <li><Link to="#">Market Place</Link></li> */}
             </ul>
           </div>
         )}

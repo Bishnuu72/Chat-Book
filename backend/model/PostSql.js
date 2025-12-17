@@ -1,7 +1,5 @@
 const pool = require("../DB/db");
 
-// Insert post
-// model/PostSql.js
 exports.insertPost = async ({ userId, content, mediaUrl, mediaType }) => {
   const [res] = await pool.execute(
     `INSERT INTO posts (userId, content, mediaUrl, mediaType, createdAt, updatedAt)

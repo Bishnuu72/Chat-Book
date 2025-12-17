@@ -13,7 +13,6 @@ exports.registerUser = async(req, res) => {
     }
     try {
         const hashedPassword = await bcrypt.hash(password, 10);
-        // Store user in the database
         const result = await createUser(fullName, email, hashedPassword);
         console.log("User registered:", email);
         return res.status(201).json({message: "User registered successfully", userId: result.insertId});
@@ -119,7 +118,7 @@ exports.getUserDetails = async(req, res) => {
     }
 }
 
-//fetch all users - for future use
+//fetchnig all users
 exports.fetchAllUsers = async(req, res) => {
     try {
         const users = await fetchAllUsers();
@@ -130,11 +129,11 @@ exports.fetchAllUsers = async(req, res) => {
     }
 }
 
-// NEW: Search users by name (protected route)
+// Search users by name (protected route)
 exports.searchUsers = async (req, res) => {
   try {
     const { query } = req.query;
-    const currentUserId = req.user.id; // From auth middleware
+    const currentUserId = req.user.id; 
 
     if (!query || query.trim().length < 2) {
       return res.status(400).json({ message: 'Query too short (minimum 2 characters)' });
@@ -146,7 +145,7 @@ exports.searchUsers = async (req, res) => {
     const users = await searchUsersByName(query.trim(), currentUserId);
 
     console.log(`Found ${users.length} users for query "${query}"`);
-    return res.status(200).json(users); // Returns array directly: [{ id, fullName, profileImg }, ...]
+    return res.status(200).json(users);
   } catch (error) {
     console.error("Error searching users:", error);
     return res.status(500).json({ message: "Internal Server Error during search" });

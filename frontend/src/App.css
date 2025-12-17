@@ -472,3 +472,86 @@
   font-size: 0.9rem;
   margin-bottom: 0;
 }
+
+
+
+/* Main Page CSS */
+
+/* Main Page CSS scoped to .main-page */
+.main-page {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-image: url("./assets/bg-network.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  color: #e0f2ff; /* soft cyan text */
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+}
+
+/* Faded overlay only inside Main */
+.main-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 24, 39, 0.7);
+  z-index: 0; /* stays behind */
+}
+
+.main-page h1,
+.main-page p,
+.main-page button,
+.main-page .icon-box {
+  position: relative;
+  z-index: 1; /* stays above overlay */
+}
+
+
+/* Text glow */
+.main-page .glow-text {
+  background: linear-gradient(to right, #38bdf8, #0ea5e9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+/* Button glow */
+.main-page .glow-button {
+  background: linear-gradient(to right, #0ea5e9, #38bdf8);
+  border-radius: 50px;
+  color: black;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 1;
+}
+
+/* Icon styling */
+.main-page .icon-box {
+  border: 4px solid #38bdf8;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #38bdf8;
+  font-size: 3rem;
+  box-shadow: 0 0 15px #0ea5e9;
+  position: relative;
+  z-index: 1;
+}
+
+/* Pull icons higher and remove bottom space */
+.main-page .icon-section {
+  margin-top: -120px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  position: relative;
+  z-index: 1;
+}
+
